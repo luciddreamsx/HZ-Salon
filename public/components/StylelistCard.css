@@ -1,0 +1,53 @@
+/* Pricing / booking card — dark panel + pink CTA (Stylelist UI) */
+
+.stylelist-card {
+  background: #121212;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.stylelist-card__label {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+}
+
+.stylelist-card__price {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffb6c1;
+  line-height: 1.15;
+}
+
+.stylelist-card__note {
+  margin: 0 0 22px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.stylelist-card__cta {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: #ffb6c1;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.stylelist-card__cta:hover {
+  filter: brightness(1.06);
+}

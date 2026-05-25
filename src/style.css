@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: black;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.book-btn {
+  background: pink;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.primary-btn {
+  background: red;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  color: white;
+}
+
+/* SERVICES */
+.services {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar nav {
+    display: none;
+  }
+
+  .hero {
+    height: 50vh;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}

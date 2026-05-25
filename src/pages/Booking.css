@@ -1,0 +1,201 @@
+.booking-page {
+  position: relative;
+  min-height: calc(100vh - var(--hz-nav-h));
+  padding: 40px 24px 64px;
+  background-color: var(--hz-black);
+  background-image: url("/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.booking-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 45% at 30% 0%, rgba(225, 29, 72, 0.2), transparent 50%),
+    rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.booking-page__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--hz-max);
+  margin: 0 auto;
+}
+
+
+.booking-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--hz-red-bright);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.booking-back:hover {
+  text-decoration: underline;
+}
+
+.booking-page__title {
+  margin: 0 0 32px;
+  text-align: center;
+  font-family: var(--hz-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--hz-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.booking-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .booking-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-form-card {
+  background: var(--hz-white);
+  color: #111;
+  border-radius: var(--hz-radius-lg);
+  padding: 28px 26px 32px;
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  box-shadow: var(--hz-shadow);
+}
+
+.booking-form-card h2 {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--hz-red);
+  padding-bottom: 10px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking-form label span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.booking-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 520px) {
+  .booking-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: var(--hz-font);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: var(--hz-red);
+  box-shadow: 0 0 0 3px var(--hz-red-dim);
+}
+
+.booking-form__submit {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--hz-red), #8b1528);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--hz-shadow-red);
+}
+
+.booking-form__submit:hover {
+  transform: translateY(-2px);
+}
+
+.booking-aside {
+  background: var(--hz-black-card);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  border-radius: var(--hz-radius-lg);
+  padding: 28px;
+  color: var(--hz-white);
+  box-shadow: var(--hz-shadow-card), 0 0 40px var(--hz-red-glow);
+}
+
+.booking-aside h2 {
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+}
+
+.booking-aside__highlight {
+  color: var(--hz-red-bright);
+}
+
+.booking-aside__block {
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--hz-muted);
+}
+
+.booking-aside__block strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--hz-white);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hz-red-bright);
+}
+
+.booking-summary {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--hz-border);
+}
+
+.booking-summary dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--hz-muted);
+}
+
+.booking-summary dd {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--hz-white);
+}

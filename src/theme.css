@@ -1,0 +1,259 @@
+/* HZ Salon — Premium Black / Red / White */
+
+:root {
+  --hz-black: #050505;
+  --hz-black-soft: #0c0c0c;
+  --hz-black-card: #141414;
+  --hz-black-elevated: #1c1c1c;
+  --hz-red: #b91c3c;
+  --hz-red-bright: #e11d48;
+  --hz-red-soft: #fb7185;
+  --hz-red-glow: rgba(225, 29, 72, 0.28);
+  --hz-shadow-red: 0 12px 40px var(--hz-red-glow);
+  --hz-red-dim: rgba(225, 29, 72, 0.1);
+  --hz-white: #fafafa;
+  --hz-muted: rgba(250, 250, 250, 0.55);
+  --hz-faint: rgba(250, 250, 250, 0.32);
+  --hz-border: rgba(255, 255, 255, 0.08);
+  --hz-border-strong: rgba(255, 255, 255, 0.14);
+  --hz-radius: 12px;
+  --hz-radius-lg: 18px;
+  --hz-radius-xl: 24px;
+  --hz-font: "Inter", system-ui, sans-serif;
+  --hz-display: "Cormorant Garamond", Georgia, serif;
+  --hz-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --hz-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --hz-max: 1200px;
+  --hz-nav-h: 72px;
+  --hz-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ambient page background */
+.hz-bg {
+  position: relative;
+  background-color: var(--hz-black);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 0% -10%, rgba(225, 29, 72, 0.14), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(225, 29, 72, 0.06), transparent 45%);
+}
+
+.hz-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - var(--hz-nav-h) - 80px);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+}
+
+.page__container {
+  width: min(var(--hz-max), 100% - 48px);
+  margin: 0 auto;
+}
+
+/* Display typography */
+.font-display {
+  font-family: var(--hz-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--hz-red-soft);
+  margin-bottom: 12px;
+}
+
+.section-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--hz-red);
+}
+
+.section-title {
+  margin: 0 0 14px;
+  font-family: var(--hz-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--hz-white);
+}
+
+.section-lead {
+  margin: 0 auto 48px;
+  max-width: 520px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--hz-muted);
+  text-align: center;
+}
+
+/* Page header block */
+.page-header {
+  text-align: center;
+  padding: 56px 24px 40px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.page-header--left {
+  text-align: left;
+  margin: 0;
+  max-width: none;
+  padding: 48px 0 32px;
+}
+
+.page-header__title {
+  margin: 0;
+  font-family: var(--hz-display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.page-header__lead {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--hz-muted);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--hz-red-bright);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--hz-ease), box-shadow 0.25s var(--hz-ease),
+    background 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #f43f5e;
+  box-shadow: 0 12px 40px var(--hz-red-glow);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--hz-border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.25s var(--hz-ease);
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: 1px solid var(--hz-border);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--hz-red);
+  background: var(--hz-red-dim);
+}
+
+.btn-back {
+  position: fixed;
+  top: calc(var(--hz-nav-h) + 16px);
+  left: max(16px, env(safe-area-inset-left));
+  z-index: 90;
+}
+
+/* Cards */
+.card-luxury {
+  background: linear-gradient(145deg, var(--hz-black-elevated), var(--hz-black-card));
+  border: 1px solid var(--hz-border);
+  border-radius: var(--hz-radius-lg);
+  overflow: hidden;
+  transition: transform 0.35s var(--hz-ease), border-color 0.3s, box-shadow 0.35s;
+}
+
+.card-luxury:hover {
+  transform: translateY(-6px);
+  border-color: rgba(225, 29, 72, 0.35);
+  box-shadow: var(--hz-shadow-card), 0 0 0 1px rgba(225, 29, 72, 0.12);
+}
+
+/* Image placeholder when src missing */
+.img-frame {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.img-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}

@@ -1,0 +1,24 @@
+@import "./theme.css";
+
+body {
+  margin: 0;
+  font-family: var(--hz-font);
+  background: var(--hz-black);
+  color: var(--hz-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

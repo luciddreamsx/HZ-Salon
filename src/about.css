@@ -1,0 +1,53 @@
+.about {
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+.about-hero {
+ height: 250px;
+  background: url("background.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 👈 IMPORTANT (pa-left) */
+  padding: 40px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* CONTENT */
+.about-content {
+  background: #111;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-content h3 {
+  color: #ff4d4d;
+  margin-bottom: 20px;
+}
+
+.about-content h4 {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.about-content ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+  color: #ddd;
+}

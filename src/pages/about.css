@@ -1,0 +1,119 @@
+.about-page {
+  background: var(--hz-black);
+}
+
+.about-hero {
+  padding: 72px 24px 48px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7), var(--hz-black)),
+    url("/background.png") center / cover no-repeat;
+  border-bottom: 1px solid var(--hz-border);
+}
+
+.about-hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+.about-hero p {
+  margin: 0;
+  color: var(--hz-muted);
+  font-size: 1.1rem;
+}
+
+.about-section,
+.about-mission {
+  padding: 56px 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-why {
+  padding: 56px 24px 64px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section h2,
+.about-mission h2,
+.about-why h2 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  color: var(--hz-white);
+}
+
+.about-section p {
+  margin: 0 0 16px;
+  line-height: 1.7;
+  color: var(--hz-muted);
+}
+
+.about-mission {
+  background: var(--hz-black-soft);
+  border-top: 1px solid var(--hz-border);
+  border-bottom: 1px solid var(--hz-border);
+  max-width: none;
+}
+
+.about-mission p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--hz-muted);
+  line-height: 1.65;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
+}
+
+.why-card {
+  padding: 24px 18px;
+  border-radius: var(--hz-radius-lg);
+  background: #e0e0e0;
+  border: 1px solid #c8c8c8;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.why-card:hover {
+  background: #ebebeb;
+  border-color: var(--hz-red-bright);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.about-cta {
+  text-align: center;
+  padding: 64px 24px 80px;
+  background: linear-gradient(180deg, var(--hz-black-soft), var(--hz-black));
+  border-top: 1px solid var(--hz-border);
+}
+
+.about-cta h2 {
+  margin: 0 0 12px;
+  font-size: 1.75rem;
+}
+
+.about-cta p {
+  margin: 0 0 8px;
+  color: var(--hz-muted);
+}
+
+.about-cta .btn-primary {
+  margin-top: 24px;
+}

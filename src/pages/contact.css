@@ -1,0 +1,66 @@
+.contact-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--hz-nav-h) - 72px);
+  padding: 48px 24px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8), var(--hz-black)),
+    url("/background.png") center / cover no-repeat;
+}
+
+.contact-page__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, var(--hz-red-dim), transparent 55%);
+  pointer-events: none;
+}
+
+.contact-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px 28px;
+  border-radius: var(--hz-radius-lg);
+  background: var(--hz-black-card);
+  border: 1px solid var(--hz-border-red);
+  box-shadow: var(--hz-shadow), var(--hz-shadow-red);
+}
+
+.contact-card h1 {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.contact-card h1 span {
+  color: var(--hz-red-bright);
+}
+
+.contact-block {
+  margin-bottom: 20px;
+}
+
+.contact-block__label {
+  margin: 0 0 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--hz-red-bright);
+}
+
+.contact-block p {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--hz-muted);
+}
+
+.contact-divider {
+  border: none;
+  border-top: 1px solid var(--hz-border);
+  margin: 20px 0;
+}

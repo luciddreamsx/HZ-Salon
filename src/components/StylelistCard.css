@@ -1,0 +1,51 @@
+.stylelist-card {
+  background: var(--hz-black-card);
+  border: 1px solid var(--hz-border-red);
+  border-radius: var(--hz-radius-lg);
+  padding: 24px;
+  box-shadow: var(--hz-shadow-red);
+}
+
+.stylelist-card__label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--hz-red-bright);
+  font-weight: 600;
+}
+
+.stylelist-card__price {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--hz-white);
+  line-height: 1.15;
+}
+
+.stylelist-card__note {
+  margin: 0 0 22px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--hz-muted);
+}
+
+.stylelist-card__cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--hz-red), #8b1528);
+  color: var(--hz-white);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--hz-shadow-red);
+}
+
+.stylelist-card__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--hz-red-glow);
+}

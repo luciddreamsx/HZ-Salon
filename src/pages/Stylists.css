@@ -1,0 +1,352 @@
+/* Book now — black / red / white */
+
+.stylists-page {
+  position: relative;
+  min-height: calc(100vh - var(--hz-nav-h));
+  padding: clamp(40px, 6vh, 56px) clamp(20px, 4vw, 40px) clamp(72px, 10vh, 96px);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  background-color: var(--hz-black);
+  background-image: url("/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.stylists-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(225, 29, 72, 0.18), transparent 55%),
+    rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stylists-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.stylists-page__top {
+  width: 100%;
+  max-width: var(--hz-max);
+  margin: 0 auto 8px;
+}
+
+.stylists-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--hz-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.stylists-back:hover {
+  border-color: var(--hz-red-bright);
+  background: var(--hz-red-dim);
+}
+
+.stylists-page > .section-eyebrow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.stylists-title {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: var(--hz-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.stylists-intro {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--hz-muted);
+}
+
+/* Selected haircut chip */
+.stylists-selected-hair {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 440px;
+  margin: 0 auto 32px;
+  padding: 18px 22px;
+  border-radius: var(--hz-radius-lg);
+  border: 1px solid rgba(225, 29, 72, 0.45);
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.12), rgba(0, 0, 0, 0.5));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.stylists-selected-hair__media {
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--hz-red-bright);
+}
+
+.stylists-selected-hair__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stylists-selected-hair__label {
+  margin: 0 0 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hz-red-soft);
+}
+
+.stylists-selected-hair__title {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.stylists-selected-hair__price {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--hz-red-soft);
+}
+
+/* Stylist cards */
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: var(--hz-max);
+  margin: 0 auto;
+}
+
+.stylist-card {
+  padding: 20px;
+  border-radius: var(--hz-radius-xl);
+  background: linear-gradient(160deg, var(--hz-black-elevated), var(--hz-black-card));
+  border: 1px solid var(--hz-border);
+  transition: transform 0.3s var(--hz-ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.stylist-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(225, 29, 72, 0.35);
+  box-shadow: var(--hz-shadow-card), 0 0 40px var(--hz-red-glow);
+}
+
+.stylist-card--selected {
+  border-color: var(--hz-red-bright);
+  box-shadow: 0 0 0 1px rgba(225, 29, 72, 0.4), 0 12px 40px var(--hz-red-glow);
+}
+
+.stylist-card__image-wrap {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--hz-radius-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--hz-border);
+}
+
+.stylist-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stylist-card--selected .stylist-card__image-wrap {
+  box-shadow: 0 0 0 2px var(--hz-red-bright);
+  border-color: transparent;
+}
+
+.stylist-card__ratings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hz-border);
+  font-size: 0.85rem;
+}
+
+.stylist-card__ratings-label {
+  color: var(--hz-faint);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.stylist-card__rates-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--hz-muted);
+}
+
+.stylist-card__star--on {
+  color: #e6c35c;
+}
+
+.stylist-card__star--off {
+  color: #444;
+}
+
+.stylist-card__label {
+  margin: 0 0 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hz-red-soft);
+}
+
+.stylist-card__value {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--hz-white);
+}
+
+.stylist-card__pick {
+  width: 100%;
+  margin-top: 4px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--hz-red-bright);
+  color: var(--hz-white);
+  font-family: var(--hz-font);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.stylist-card__pick:hover {
+  background: #f43f5e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--hz-red-glow);
+}
+
+.stylist-card--selected .stylist-card__pick {
+  background: var(--hz-white);
+  color: var(--hz-black);
+}
+
+.stylist-card--selected .stylist-card__pick:hover {
+  background: #f5f5f5;
+}
+
+/* Hairstyle list section */
+.stylists-pick {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(225, 29, 72, 0.25);
+}
+
+.stylists-pick__title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-family: var(--hz-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.stylists-pick__hint {
+  text-align: center;
+  margin: 0 auto 32px;
+  max-width: 520px;
+  font-size: 0.95rem;
+  color: var(--hz-muted);
+  line-height: 1.6;
+}
+
+.stylists-pick__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: var(--hz-max);
+  margin: 0 auto;
+}
+
+.stylists-pick__card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px;
+  border-radius: var(--hz-radius-lg);
+  background: linear-gradient(145deg, var(--hz-black-elevated), var(--hz-black-card));
+  border: 1px solid var(--hz-border);
+  transition: transform 0.3s var(--hz-ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.stylists-pick__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(225, 29, 72, 0.45);
+  box-shadow: var(--hz-shadow-card), 0 0 32px var(--hz-red-glow);
+}
+
+.stylists-pick__media {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--hz-radius);
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--hz-border);
+}
+
+.stylists-pick__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stylists-pick__name {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.stylists-pick__price {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--hz-red-soft);
+}
+
+@media (max-width: 900px) {
+  .stylists-grid,
+  .stylists-pick__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .stylists-grid,
+  .stylists-pick__grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}

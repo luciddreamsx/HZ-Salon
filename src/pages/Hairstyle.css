@@ -1,0 +1,58 @@
+/* Haircuts — uses appearance.css; image overrides */
+
+.appearance-grid--haircuts {
+  flex-wrap: wrap;
+}
+
+/* Portrait photos — cover aron puno ang box, walay white bars */
+.appearance-grid--haircuts .appearance-card__panel {
+  height: auto;
+  padding: 16px 16px 18px;
+}
+
+.appearance-grid--haircuts .appearance-card__panel img {
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  min-height: unset;
+  max-height: none;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  background: #1a1a1a;
+}
+
+@media (min-width: 921px) {
+  .appearance-grid--haircuts .appearance-card {
+    flex: 0 0 calc((100% - 56px) / 3);
+    max-width: calc((100% - 56px) / 3);
+  }
+}
+
+.appearance-card--link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s var(--hz-ease);
+}
+
+.appearance-card--link:hover {
+  transform: translateY(-4px);
+}
+
+.appearance-card--link:focus-visible {
+  outline: 2px solid var(--hz-red-bright);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+@media (max-width: 920px) {
+  .appearance-grid--haircuts .appearance-card__panel {
+    height: auto;
+  }
+
+  .appearance-grid--haircuts .appearance-card__panel img {
+    min-height: unset;
+    max-height: none;
+    height: auto;
+  }
+}

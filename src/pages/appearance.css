@@ -1,0 +1,155 @@
+/* Appearance — Figma: 3 tapad taupe cards */
+
+.appearance-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--hz-nav-h));
+  padding: 40px 28px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  background-image: url("/background.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.appearance-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.appearance-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.appearance-back {
+  align-self: flex-start;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: var(--hz-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.appearance-back:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.appearance-title {
+  margin: 0 0 48px;
+  font-family: var(--hz-font);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+.appearance-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  width: 100%;
+  max-width: 1020px;
+}
+
+.appearance-card {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Taupe panel — parehas kadako ang tulo */
+.appearance-card__panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 400px;
+  padding: 22px 22px 48px;
+  border-radius: 20px;
+  background: #c4b6a6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.appearance-card__panel img {
+  width: 100%;
+  height: 236px;
+  min-height: 236px;
+  max-height: 236px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
+  display: block;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.appearance-card h3 {
+  margin: 14px 0 0;
+  min-height: 1.4em;
+  text-align: center;
+  font-family: var(--hz-font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 920px) {
+  .appearance-grid {
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+
+  .appearance-card {
+    flex: 1 1 calc(50% - 14px);
+    max-width: none;
+  }
+
+  .appearance-card__panel {
+    height: 380px;
+  }
+
+  .appearance-card__panel img {
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .appearance-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .appearance-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}

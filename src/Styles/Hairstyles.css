@@ -1,0 +1,130 @@
+/* Hairstyle page — dark salon layout */
+
+.hairstyles-page {
+  background: #000;
+  color: #fff;
+  min-height: calc(100vh - 120px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 1. Hero */
+.hairstyles-hero {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111 url("/background.png") center / cover no-repeat;
+}
+
+.hairstyles-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+}
+
+/* 2. Sub-header bar */
+.hairstyles-subbar {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 14px 16px;
+  border-bottom: 1px solid #333;
+}
+
+/* 3. Grid section */
+.hairstyles-grid-wrap {
+  background: #000;
+  padding: 48px 24px 72px;
+}
+
+.hairstyles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.hairstyle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Card nga mo-link sa detail / book page */
+a.hairstyle-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.hairstyle-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(255, 182, 193, 0.15);
+}
+
+a.hairstyle-card:focus-visible {
+  outline: 2px solid pink;
+  outline-offset: 4px;
+}
+
+/* Parehas nga frame sa tanan — dili na magkalahi ang height */
+.hairstyle-card__media {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.hairstyle-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hairstyle-card .style-name {
+  margin: 14px 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.25;
+  flex-grow: 1;
+}
+
+.hairstyle-card .style-popularity-label {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hairstyles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hairstyles-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
